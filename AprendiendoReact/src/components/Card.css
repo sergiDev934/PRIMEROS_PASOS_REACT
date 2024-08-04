@@ -1,0 +1,54 @@
+.Card {
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(45, 50, 54);
+  color: white;
+  transition: 0.1s;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Card h1 {
+  text-align: center;
+}
+.Card p {
+  text-align: center;
+}
+.Card:hover {
+  filter: drop-shadow(0 0 2em #fff);
+}
+button {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 30px;
+}
+button:hover {
+  background-color: rgb(55, 142, 255);
+}
+.isFollowing {
+  background-color: rgb(248, 79, 79);
+  color: black;
+}
+.isFollowing:hover {
+  border: 1px solid white;
+  background-color: #555555;
+  color: white;
+}
+.normalBtnText {
+  display: block;
+}
+.isFollowing-hover {
+  display: none;
+}
+.isFollowing:hover > .isFollowing-hover {
+  display: block;
+}
+.isFollowing:hover > .normalBtnText {
+  display: none;
+}
