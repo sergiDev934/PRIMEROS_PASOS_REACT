@@ -13,3 +13,7 @@ export const checkWinner = (boardToCheck) => {
   }
   return null;
 };
+
+export const isGameOver = (newBoard) => {
+  return newBoard.every((square) => square !== null);
+};

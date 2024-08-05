@@ -2,16 +2,13 @@ import { useState } from "react";
 import confetti from "canvas-confetti";
 import { Square } from "./components/Square.jsx";
 import { TURNS, WINNER_COMBOS } from "./constants.js";
-import { checkWinner } from "./logic/board.js";
+import { checkWinner, isGameOver } from "./logic/board.js";
+import { WinnerModal } from "./components/winnerModal.jsx";
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState(TURNS.X);
   const [winner, setWinner] = useState(null); //null es que no hay ganador, false hay un empate
-
-  const isGameOver = (newBoard) => {
-    return newBoard.every((square) => square !== null);
-  };
 
   const resetGame = () => {
     setBoard(Array(9).fill(null));
@@ -57,19 +54,7 @@ function App() {
         <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
         <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
       </section>
-      {winner !== null && (
-        <section className="winner">
-          <div className="text">
-            <h2>{winner === false ? "Empate" : "Ganó: "}</h2>
-            <header className="win">
-              {winner && <Square>{winner}</Square>}
-            </header>
-            <footer>
-              <button onClick={resetGame}>Empezar de nuevo</button>
-            </footer>
-          </div>
-        </section>
-      )}
+      <WinnerModal resetGame={resetGame} winner={winner} />
     </main>
   );
 }
