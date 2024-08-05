@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import confetti from "canvas-confetti";
 import { Square } from "./components/Square.jsx";
 import { TURNS, WINNER_COMBOS } from "./constants.js";
@@ -51,6 +51,11 @@ function App() {
       setWinner(false);
     }
   };
+
+  useEffect(() => {
+    // como mínimo se ejecuta una vez
+    console.log("useEffect");
+  }, []);
 
   return (
     <main className="board">
