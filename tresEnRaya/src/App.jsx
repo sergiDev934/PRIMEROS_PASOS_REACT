@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import confetti from "canvas-confetti";
 import { Square } from "./components/Square.jsx";
-import { TURNS, WINNER_COMBOS } from "./constants.js";
+import { TURNS } from "./constants.js";
 import { checkWinner, isGameOver } from "./logic/board.js";
 import { WinnerModal } from "./components/winnerModal.jsx";
 
