@@ -1,0 +1,20 @@
+main{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: system-ui ;
+}
+main button{
+    padding: 15px ;
+    background-color: rgb(66, 65, 65);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+main img{
+    max-width: 600px;
+}
